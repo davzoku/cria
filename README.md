@@ -1,15 +1,26 @@
 # 🍼🦙 CRIA
 
+Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/facebookresearch/llama).
+
+## What is Cria?
+
+> krē-ə plural crias. : a baby llama, alpaca, vicuña, or guanaco.
+
 <p align="center">
   <img src="assets/logo.jpeg" width="300" height="300" alt="Cria Logo"> <br>
-  <i>An end-to-end LLM app prototype</i>
+  <i>or what ChatGPT suggests, <b>"Crafting a Rapid prototype of an Intelligent llm App using open source resources"</b>.</i>
 </p>
-
-Welcome to CRIA, a LLM model series based on [Llama 2](https://github.com/facebookresearch/llama)-7B.
 
 ## Features
 
 - Demostration of instruction-tuning of LLM on **free colab instance**.
+- Utilized BentoML for efficient model serving and inference deployment.
+- Integrated Next.js frontend for interactive user interface.
+
+<p align="center">
+  <img src="assets/cria-frontend-js.png" alt="Frontend"> <br>
+  <i>Leveraging on open source resources such as <a href="https://github.com/horizon-ui/chatgpt-ai-template">Horizon AI Template</a></i>
+</p>
 
 ## Model History
 
