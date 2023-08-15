@@ -44,7 +44,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
           transitionProperty="top, bottom, width"
           transitionTimingFunction="linear, linear, ease"
         >
-          <Portal>
+          {/* <Portal>
             <Box>
               <Navbar
                 setApiKey={setApiKey}
@@ -54,7 +54,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
                 secondary={getActiveNavbar(routes, pathname)}
               />
             </Box>
-          </Portal>
+          </Portal> */}
           <Box
             mx="auto"
             p={{ base: '20px', md: '30px' }}

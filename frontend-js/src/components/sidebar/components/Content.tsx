@@ -12,6 +12,7 @@ import {
   MenuList,
   Stack,
   Text,
+  useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
 import NavLink from '@/components/link/NavLink';
@@ -28,6 +29,7 @@ import { IRoute } from '@/types/navigation';
 import { IoMdPerson } from 'react-icons/io';
 import { FiLogOut } from 'react-icons/fi';
 import { LuHistory } from 'react-icons/lu';
+import { IoMdMoon, IoMdSunny } from 'react-icons/io';
 import { MdOutlineManageAccounts, MdOutlineSettings } from 'react-icons/md';
 
 // FUNCTIONS
@@ -38,6 +40,8 @@ interface SidebarContent extends PropsWithChildren {
 }
 
 function SidebarContent(props: SidebarContent) {
+  const { colorMode, toggleColorMode } = useColorMode();
+  const navbarIcon = useColorModeValue('gray.500', 'white');
   const { routes, setApiKey } = props;
   const textColor = useColorModeValue('navy.700', 'white');
   const borderColor = useColorModeValue('gray.200', 'whiteAlpha.300');
@@ -84,10 +88,10 @@ function SidebarContent(props: SidebarContent) {
       >
         <NextAvatar h="34px" w="34px" src={avatar} me="10px" />
         <Text color={textColor} fontSize="xs" fontWeight="600" me="10px">
-          Kevin Walters
+          Guest
         </Text>
 
-        <Button
+        {/* <Button
           variant="transparent"
           border="1px solid"
           borderColor={borderColor}
@@ -114,7 +118,26 @@ function SidebarContent(props: SidebarContent) {
           alignItems="center"
         >
           <Icon as={FiLogOut} width="16px" height="16px" color="inherit" />
-        </Button>
+        
+        </Button> */}
+        <Button
+        variant="no-hover"
+        bg="transparent"
+        p="0px"
+        minW="unset"
+        minH="unset"
+        h="18px"
+        w="max-content"
+        onClick={toggleColorMode}
+      >
+        <Icon
+          me="10px"
+          h="18px"
+          w="18px"
+          color={navbarIcon}
+          as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
+        />
+      </Button>        
       </Flex>
     </Flex>
   );

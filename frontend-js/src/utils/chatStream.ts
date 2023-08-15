@@ -25,7 +25,7 @@ export const OpenAIStream = async (
 
   const system = { role: 'system', content: prompt };
 
-  const openai_api = process.env.OPENAI_API; 
+  const openai_api = process.env.OPENAI_API || ''; 
   const res = await fetch(openai_api, {
     headers: {
       'Content-Type': 'application/json',
@@ -93,7 +93,7 @@ export const FastAPI = async (
 ) => {
   const prompt = createPrompt(inputCode);
 
-  const fastapi_api = process.env.FASTAPI_API;
+  const fastapi_api = process.env.FASTAPI_API || '';
   const res = await fetch(fastapi_api, {      
     headers: {
       // 'Content-Type': 'application/json',
@@ -192,7 +192,7 @@ export const OpenLLMAPI = async (
     },
   };
 
-  const openllm_api = process.env.OPENLLM_API;
+  const openllm_api = process.env.OPENLLM_API  || '';
   const response = await fetch(openllm_api, {      
     headers: {
       'Content-Type': 'application/json',

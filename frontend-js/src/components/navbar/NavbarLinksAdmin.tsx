@@ -62,7 +62,7 @@ export default function HeaderLinks(props: {
       borderRadius="30px"
       boxShadow={shadow}
     >
-      <SearchBar
+      {/* <SearchBar
         mb={() => {
           if (secondary) {
             return { base: '10px', md: 'unset' };
@@ -72,12 +72,12 @@ export default function HeaderLinks(props: {
         me="10px"
         borderRadius="30px"
       />
-      <SidebarResponsive routes={routes} />
+      <SidebarResponsive routes={routes} /> */}
       {/* <APIModal setApiKey={setApiKey} /> */}
 
 
 
-      <Button
+      {/* <Button
         variant="no-hover"
         bg="transparent"
         p="0px"
@@ -105,11 +105,11 @@ export default function HeaderLinks(props: {
             h="40px"
             borderRadius={'50%'}
           />
-          <Center top={0} left={0} position={'absolute'} w={'100%'} h={'100%'}>
+          <Center top={0} left={0} position={'absolute'} w={'100%'} h={'100%'}> */}
             {/* <Text fontSize={'xs'} fontWeight="bold" color={'white'}>
               KW
             </Text> */}
-            <NextAvatar h="40px" w="40px" src={avatar}  />
+            {/* <NextAvatar h="40px" w="40px" src={avatar}  />
           </Center>
         </MenuButton>
         <MenuList
@@ -132,10 +132,10 @@ export default function HeaderLinks(props: {
               fontWeight="700"
               color={textColor}
             >
-              👋&nbsp; Hey, Kevin
+              👋&nbsp; Hey, Guest
             </Text>
-          </Flex>
-          <Flex flexDirection="column" p="10px">
+          </Flex> */}
+          {/* <Flex flexDirection="column" p="10px">
             <NavLink href="/settings">
               <MenuItem
                 _hover={{ bg: 'none' }}
@@ -171,9 +171,9 @@ export default function HeaderLinks(props: {
                 Log out
               </Text>
             </MenuItem>
-          </Flex>
-        </MenuList>
-      </Menu>
+          </Flex> */}
+        {/* </MenuList>
+      </Menu> */}
     </Flex>
   );
 }
