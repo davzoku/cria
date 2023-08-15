@@ -75,6 +75,13 @@ export const OpenAIStream = async (
 
       const parser = createParser(onParse);
 
+      const eventSource = new EventSource('your-sse-endpoint');
+      eventSource.addEventListener('error', (event) => {
+        if (event.readyState === EventSource.CLOSED) {
+          controller.close();
+        }
+      });      
+
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
       }
@@ -84,75 +91,80 @@ export const OpenAIStream = async (
   return stream;
 };
 
+export const FastAPI = async (
+  inputCode: string,
+  model: string,
+  key: string | undefined,
+) => {
+  const prompt = createPrompt(inputCode);
 
-// export const OpenLLMAPI = async (
-//   inputCode: string,
-//   model: string,
-//   key: string | undefined,
-// ) => {
-//   const prompt = createPrompt(inputCode);
+  // const system = { role: 'system', content: prompt };
 
-//   const system = { role: 'system', content: prompt };
+  const res = await fetch(`http://localhost:8000/v1/chat/completions`, {    
+    headers: {
+      // 'Content-Type': 'application/json',
+      // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
+    },
+    method: 'POST',
+    body: JSON.stringify({
+      prompt: prompt
+    }),
+  });
 
-//   const res = await fetch(`https://170f8506-7b6e-4ade-bac4-66f550d78b05.mock.pstmn.io/v1/generate`, {    
-//     headers: {
-//       'Content-Type': 'application/json',
-//       // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
-//     },
-//     method: 'POST',
-//     body: JSON.stringify({
-//       model,
-//       messages: [system],
-//       temperature: 0,
-//       stream: true,
-//     }),
-//   });
+  const encoder = new TextEncoder();
+  const decoder = new TextDecoder();
+  console.log("xxxx")
+  console.log(res)
+  if (res.status !== 200) {
+    const statusText = res.statusText;
+    const result = await res.body?.getReader().read();
+    throw new Error(
+      `CRIA API returned an error: ${
+        decoder.decode(result?.value) || statusText
+      }`,
+    );
+  }
 
-//   const encoder = new TextEncoder();
-//   const decoder = new TextDecoder();
+  const stream = new ReadableStream({
+    async start(controller) {
+      const onParse = (event: ParsedEvent | ReconnectInterval) => {
+        if (event.type === 'event') {
+          const data = event.data;
 
-//   if (res.status !== 200) {
-//     const statusText = res.statusText;
-//     const result = await res.body?.getReader().read();
-//     throw new Error(
-//       `CRIA API returned an error: ${
-//         decoder.decode(result?.value) || statusText
-//       }`,
-//     );
-//   }
+          if (data === '[DONE]') {
+            controller.close();
+            return;
+          }
+          
 
-//   const stream = new ReadableStream({
-//     async start(controller) {
-//       const onParse = (event: ParsedEvent | ReconnectInterval) => {
-//         if (event.type === 'event') {
-//           const data = event.data;
+          try {
+            // const json = JSON.parse(data);
+            // const text = json.choices[0].delta.content;
+            const text=data
+            const queue = encoder.encode(text);
+            controller.enqueue(queue);
+          } catch (e) {
+            controller.error(e);
+          }
+        }
+      };
 
-//           if (data === '[DONE]') {
-//             controller.close();
-//             return;
-//           }
+      const parser = createParser(onParse);
 
-//           try {
-//             const json = JSON.parse(data);
-//             const text = json.choices[0].delta.content;
-//             const queue = encoder.encode(text);
-//             controller.enqueue(queue);
-//           } catch (e) {
-//             controller.error(e);
-//           }
-//         }
-//       };
+      // res.body.addEventListener('close', () => {
+      //   controller.close();
+      // });        
 
-//       const parser = createParser(onParse);
+      for await (const chunk of res.body as any) {
+        parser.feed(decoder.decode(chunk));
+      }
+    },
+  });
+  console.log("x1")
+  console.log(stream)
 
-//       for await (const chunk of res.body as any) {
-//         parser.feed(decoder.decode(chunk));
-//       }
-//     },
-//   });
-
-//   return stream;
-// };
+  return stream;
+};
 
 export const OpenLLMAPI = async (
   prompt: string,
@@ -211,7 +223,7 @@ export const OpenLLMAPI = async (
 
   if (!response.ok) {
     const errorMessage = await response.text();
-    throw new Error(`OpenAI API error: ${errorMessage}`);
+    throw new Error(`OpenLLM API error: ${errorMessage}`);
   }
 
   const result = await response.json();

@@ -324,9 +324,7 @@ export default function Chat(props: { apiKeyApp: string }) {
           direction={{ base: 'column', md: 'row' }}
           alignItems="center"
         >
-          <Text fontSize="xs" textAlign="center" color={gray}>
-            
-          </Text>
+
           <Link href="https://huggingface.co/davzoku/cria-llama2-7b-v1.3">
             <Text
               fontSize="xs"
@@ -335,6 +333,19 @@ export default function Chat(props: { apiKeyApp: string }) {
               textDecoration="underline"
             >
               CRIA Version 1.3
+            </Text>
+          </Link>
+          <Text fontSize="xs" textAlign="center" color={gray}>
+          &nbsp;by&nbsp;
+            </Text>
+          <Link href="https://walterteng.com">
+            <Text
+              fontSize="xs"
+              color={textColor}
+              fontWeight="500"
+              textDecoration="underline"
+            >
+              Walter Teng
             </Text>
           </Link>
         </Flex>

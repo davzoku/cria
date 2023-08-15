@@ -1,5 +1,5 @@
 import { ChatBody } from '@/types/types';
-import { OpenAIStream, OpenLLMAPI } from '@/utils/chatStream';
+import { OpenAIStream, OpenLLMAPI, FastAPI } from '@/utils/chatStream';
 
 export const config = {
   runtime: 'edge',
@@ -19,9 +19,10 @@ const handler = async (req: Request): Promise<Response> => {
     // if (!apiKey) {
     //   return new Response('API key not found', { status: 500 });
     // }
-
+å
     // const stream = await OpenAIStream(inputCode, model, apiKeyFinal);
-    const stream = await OpenLLMAPI(inputCode, model, apiKeyFinal);
+    // const stream = await OpenLLMAPI(inputCode, model, apiKeyFinal);
+    const stream = await FastAPI(inputCode, model, apiKeyFinal);
 
     return new Response(stream);
   } catch (error) {
