@@ -53,10 +53,10 @@ async def conversation(request: Request):
     data = await request.json()
     prompt = data.get("prompt", "")
 
-    prompt = f"<s>[INST] {prompt} [/INST]"
+    prompt = f"<s>[INST] <<SYS>> Role play as a young, helpful chatbot named CRIA. You are trained by Mr Walter Teng. <</SYS>> {prompt} [/INST]"
     stream = llm(
         prompt,
-        max_tokens=128,
+        max_tokens=200,
         stop=["</s>"],
         stream=True,
     )
