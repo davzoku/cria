@@ -8,7 +8,9 @@ export const config = {
 const handler = async (req: Request): Promise<Response> => {
   try {
     const { inputCode, model, apiKey } = (await req.json()) as ChatBody;
+    const apiType = process.env.API_TYPE;
     let apiKeyFinal;
+    let stream;
 
     // if (apiKey) {
     //   apiKeyFinal = apiKey;
@@ -19,10 +21,18 @@ const handler = async (req: Request): Promise<Response> => {
     // if (!apiKey) {
     //   return new Response('API key not found', { status: 500 });
     // }
-å
-    // const stream = await OpenAIStream(inputCode, model, apiKeyFinal);
-    // const stream = await OpenLLMAPI(inputCode, model, apiKeyFinal);
-    const stream = await FastAPI(inputCode, model, apiKeyFinal);
+
+    if (apiType === "FASTAPI") {
+      stream = await FastAPI(inputCode, model, apiKeyFinal);
+    } else if (apiType === "FASTAPI") {
+      stream = await OpenLLMAPI(inputCode, model, apiKeyFinal);
+    } else if  (apiType === "FASTAPI") {  
+      stream = await OpenAIStream(inputCode, model, apiKeyFinal);
+    } else {
+      // not implemented
+      console.error("Unsupported API type:", apiType);
+    }
+
 
     return new Response(stream);
   } catch (error) {

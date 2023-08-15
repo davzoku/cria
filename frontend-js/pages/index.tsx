@@ -102,18 +102,46 @@ export default function Chat(props: { apiKeyApp: string }) {
       signal: controller.signal,
       body: JSON.stringify(body),
     });
-
+    // if (!response.ok) {
+    //   setLoading(false);
+    //   if (response) {
+    //     alert(
+    //       'Something went wrong went fetching from the API. Make sure to use a valid API key.',
+    //     );
+    //   }
+    //   return;
+    // }
+    let data;
+    const defaultReply = "Zzz... Oh, hello! This baby llama needs a nap right now. Just so you know, I'm here for demo sessions only. If you're looking for more llama-tastic fun, make sure to contact my creator at walter.tengkw@gmail.com for a proper demo! Catch you on the flip side of dreamland! 🦙💤";
     if (!response.ok) {
       setLoading(false);
-      if (response) {
-        alert(
-          'Something went wrong went fetching from the API. Make sure to use a valid API key.',
-        );
-      }
-      return;
-    }
-
-    const data = response.body;
+      data = new ReadableStream({
+        start(controller) {
+          const encoder = new TextEncoder();
+          const defaultChunks = encoder.encode(defaultReply);
+    
+          let index = 0;
+          const chunkSize = 16; // Adjust the chunk size as needed
+          const delay = 100; // Adjust the delay in milliseconds
+    
+          function enqueueChunk() {
+            const chunk = defaultChunks.slice(index, index + chunkSize);
+            index += chunkSize;
+            controller.enqueue(chunk);
+    
+            if (index < defaultChunks.length) {
+              setTimeout(enqueueChunk, delay);
+            } else {
+              controller.close();
+            }
+          }
+    
+          enqueueChunk();
+        }
+      });
+    } else {
+      data = response.body;
+    }    
 
     if (!data) {
       setLoading(false);

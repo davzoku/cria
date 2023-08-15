@@ -1,4 +1,5 @@
 import endent from 'endent';
+import { Readable } from 'stream';
 import {
   createParser,
   ParsedEvent,
@@ -24,7 +25,8 @@ export const OpenAIStream = async (
 
   const system = { role: 'system', content: prompt };
 
-  const res = await fetch(`https://api.openai.com/v1/chat/completions`, {
+  const openai_api = process.env.OPENAI_API; 
+  const res = await fetch(openai_api, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
@@ -73,14 +75,7 @@ export const OpenAIStream = async (
         }
       };
 
-      const parser = createParser(onParse);
-
-      const eventSource = new EventSource('your-sse-endpoint');
-      eventSource.addEventListener('error', (event) => {
-        if (event.readyState === EventSource.CLOSED) {
-          controller.close();
-        }
-      });      
+      const parser = createParser(onParse);  
 
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
@@ -98,9 +93,8 @@ export const FastAPI = async (
 ) => {
   const prompt = createPrompt(inputCode);
 
-  // const system = { role: 'system', content: prompt };
-
-  const res = await fetch(`http://localhost:8000/v1/chat/completions`, {    
+  const fastapi_api = process.env.FASTAPI_API;
+  const res = await fetch(fastapi_api, {      
     headers: {
       // 'Content-Type': 'application/json',
       // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
@@ -113,7 +107,6 @@ export const FastAPI = async (
 
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
-  console.log("xxxx")
   console.log(res)
   if (res.status !== 200) {
     const statusText = res.statusText;
@@ -135,11 +128,8 @@ export const FastAPI = async (
             controller.close();
             return;
           }
-          
 
           try {
-            // const json = JSON.parse(data);
-            // const text = json.choices[0].delta.content;
             const text=data
             const queue = encoder.encode(text);
             controller.enqueue(queue);
@@ -149,19 +139,13 @@ export const FastAPI = async (
         }
       };
 
-      const parser = createParser(onParse);
-
-      // res.body.addEventListener('close', () => {
-      //   controller.close();
-      // });        
+      const parser = createParser(onParse);    
 
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
       }
     },
   });
-  console.log("x1")
-  console.log(stream)
 
   return stream;
 };
@@ -208,7 +192,8 @@ export const OpenLLMAPI = async (
     },
   };
 
-  const response = await fetch(`https://170f8506-7b6e-4ade-bac4-66f550d78b05.mock.pstmn.io/v1/generate`, {      
+  const openllm_api = process.env.OPENLLM_API;
+  const response = await fetch(openllm_api, {      
     headers: {
       'Content-Type': 'application/json',
       // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
