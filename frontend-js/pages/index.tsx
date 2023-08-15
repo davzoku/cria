@@ -23,6 +23,9 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
+import avatar from '/public/img/avatars/avatar.png';
+import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
+import { NextAvatar } from '@/components/image/Avatar';
 import Bg from '../public/img/chat/bg4.png';
 
 export default function Chat(props: { apiKeyApp: string }) {
@@ -245,12 +248,13 @@ export default function Chat(props: { apiKeyApp: string }) {
               minH="40px"
               minW="40px"
             >
-              <Icon
+              {/* <Icon
                 as={MdPerson}
                 width="20px"
                 height="20px"
                 color={brandColor}
-              />
+              /> */}
+              <NextAvatar h="40px" w="40px" src={avatar_rabbit}  />
             </Flex>
             <Flex
               p="22px"
@@ -268,14 +272,14 @@ export default function Chat(props: { apiKeyApp: string }) {
               >
                 {inputOnSubmit}
               </Text>
-              <Icon
+              {/* <Icon
                 cursor="pointer"
                 as={MdEdit}
                 ms="auto"
                 width="20px"
                 height="20px"
                 color={gray}
-              />
+              /> */}
             </Flex>
           </Flex>
           <Flex w="100%">
@@ -289,12 +293,13 @@ export default function Chat(props: { apiKeyApp: string }) {
               minH="40px"
               minW="40px"
             >
-              <Icon
+              {/* <Icon
                 as={MdAutoAwesome}
                 width="20px"
                 height="20px"
                 color="white"
-              />
+              /> */}
+              <NextAvatar h="40px" w="40px" src={avatar}  />              
             </Flex>
             <MessageBoxChat output={outputCode} />
           </Flex>

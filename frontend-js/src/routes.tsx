@@ -4,9 +4,9 @@ import {
   MdHome,
   MdLock,
   MdLayers,
-  MdAutoAwesome,
   MdOutlineManageAccounts,
 } from 'react-icons/md';
+import {  PiChatsCircleFill } from 'react-icons/pi'
 import { IoMdPerson } from 'react-icons/io';
 import { LuHistory } from 'react-icons/lu';
 import { RoundedChart } from '@/components/icons/Icons';
@@ -19,7 +19,7 @@ const routes: IRoute[] = [
     name: 'Chat with CRIA',
     path: '/',
     icon: (
-      <Icon as={MdAutoAwesome} width="20px" height="20px" color="inherit" />
+      <Icon as={PiChatsCircleFill} width="20px" height="20px" color="inherit" />
     ),
     collapse: false,
   },

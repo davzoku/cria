@@ -5,6 +5,7 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
+        <link rel="manifest" href="/manifest.json" />
         <title>CRIA: Your Friendly Baby Llama Chatbot</title>
       </Head>
       <body suppressHydrationWarning={true}>
