@@ -1,4 +1,4 @@
-import { Icon } from './lib/chakra';
+import { Icon } from '@chakra-ui/react';
 import {
   MdFileCopy,
   MdHome,
