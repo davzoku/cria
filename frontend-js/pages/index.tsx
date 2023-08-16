@@ -43,7 +43,7 @@ export default function Chat(props: { apiKeyApp: string }) {
 
   const { colorMode } = useColorMode();
 
-  const inputRef = useRef(null);
+  const inputRef = useRef<HTMLInputElement>(null);
   
   // API Key
   // const [apiKey, setApiKey] = useState<string>(apiKeyApp);
