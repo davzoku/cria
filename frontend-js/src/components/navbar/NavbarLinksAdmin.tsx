@@ -33,7 +33,7 @@ export default function HeaderLinks(props: {
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
   const navbarIcon = useColorModeValue('gray.500', 'white');
-  let menuBg = useColorModeValue('white', 'navy.800');
+  let menuBg = useColorModeValue('transparent', 'transparent');
   const textColor = useColorModeValue('navy.700', 'white');
   const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)');
   const shadow = useColorModeValue(
@@ -53,15 +53,16 @@ export default function HeaderLinks(props: {
   return (
     <Flex
       zIndex="100"
-      w={{ sm: '100%', md: 'auto' }}
+      w={{ sm: 'auto', md: 'auto' }}
       alignItems="center"
       flexDirection="row"
       bg={menuBg}
       flexWrap={secondary ? { base: 'wrap', md: 'nowrap' } : 'unset'}
       p="10px"
       borderRadius="30px"
-      boxShadow={shadow}
+      // boxShadow={shadow}
     >
+      
       {/* <SearchBar
         mb={() => {
           if (secondary) {
@@ -71,8 +72,11 @@ export default function HeaderLinks(props: {
         }}
         me="10px"
         borderRadius="30px"
-      />
-      <SidebarResponsive routes={routes} /> */}
+      /> */}
+
+      {/* <SearchBar /> */}
+      {/* <Button style={{ display: 'none' }} /> */}
+      <SidebarResponsive routes={routes} />
       {/* <APIModal setApiKey={setApiKey} /> */}
 
 

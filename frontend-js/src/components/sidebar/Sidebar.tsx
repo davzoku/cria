@@ -80,6 +80,7 @@ function Sidebar(props: SidebarProps) {
 export function SidebarResponsive(props: { routes: IRoute[] }) {
   let sidebarBackgroundColor = useColorModeValue('white', 'navy.800');
   let menuColor = useColorModeValue('gray.400', 'white');
+  // let menuColor = useColorModeValue('gray.800', 'white');
   // // SIDEBAR
   const { isOpen, onOpen, onClose } = useDisclosure();
 

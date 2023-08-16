@@ -59,11 +59,11 @@ export default function AdminNavbar(props: {
     <Box
       zIndex="100"
       position={navbarPosition}
-      boxShadow={navbarShadow}
-      bg={navbarBg}
+      // boxShadow={navbarShadow}
+      // bg={navbarBg}
       borderColor={navbarBorder}
-      filter={navbarFilter}
-      backdropFilter={navbarBackdrop}
+      // filter={navbarFilter}
+      // backdropFilter={navbarBackdrop}
       backgroundPosition="center"
       backgroundSize="cover"
       borderRadius="16px"
@@ -145,7 +145,7 @@ export default function AdminNavbar(props: {
             {brandText}
           </Link> */}
         </Box>
-        <Box ms="auto" w={{ sm: '100%', md: 'unset' }}>
+        <Box ms="auto" w={{ sm: 'unset', md: 'unset' }}>
           <AdminNavbarLinks setApiKey={setApiKey} secondary={props.secondary} />
         </Box>
       </Flex>

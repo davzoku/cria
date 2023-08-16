@@ -40,7 +40,7 @@ export default function Footer() {
           CRIA
         </Text>
       </Text>
-      <List display="flex">
+      {/* <List display="flex">
         <ListItem
           me={{
             base: '10px',
@@ -96,7 +96,7 @@ export default function Footer() {
             Privacy Policy
           </Link>
         </ListItem>
-      </List>
+      </List> */}
     </Flex>
   );
 }

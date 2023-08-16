@@ -192,7 +192,7 @@ export default function Chat(props: { apiKeyApp: string }) {
   return (
     <Flex
       w="100%"
-      pt={{ base: '70px', md: '0px' }}
+      pt={{ base: '70px' }}
       direction="column"
       position="relative"
     >

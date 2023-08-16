@@ -39,12 +39,12 @@ function App({ Component, pageProps }: AppProps<{}>) {
           maxHeight="100%"
           w={{ base: '100%', xl: 'calc( 100% - 290px )' }}
           maxWidth={{ base: '100%', xl: 'calc( 100% - 290px )' }}
-          transition="all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
-          transitionDuration=".2s, .2s, .35s"
-          transitionProperty="top, bottom, width"
-          transitionTimingFunction="linear, linear, ease"
+          // transition="all 0.33s cubic-bezier(0.685, 0.0473, 0.346, 1)"
+          // transitionDuration=".2s, .2s, .35s"
+          // transitionProperty="top, bottom, width"
+          // transitionTimingFunction="linear, linear, ease"
         >
-          {/* <Portal>
+          <Portal>
             <Box>
               <Navbar
                 setApiKey={setApiKey}
@@ -54,7 +54,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
                 secondary={getActiveNavbar(routes, pathname)}
               />
             </Box>
-          </Portal> */}
+          </Portal>
           <Box
             mx="auto"
             p={{ base: '20px', md: '30px' }}
@@ -64,9 +64,9 @@ function App({ Component, pageProps }: AppProps<{}>) {
           >
             <Component apiKeyApp={apiKey} {...pageProps} />
           </Box>
-          <Box>
+          {/* <Box>
             <Footer />
-          </Box>
+          </Box> */}
         </Box>
       </Box>
     </ChakraProvider>
