@@ -21,7 +21,7 @@ import {
   useColorModeValue,
   useColorMode
 } from '@chakra-ui/react';
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useState } from 'react';
 import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
 import avatar from '/public/img/avatars/avatar.png';
 import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
@@ -42,8 +42,6 @@ export default function Chat(props: { apiKeyApp: string }) {
   const [loading, setLoading] = useState<boolean>(false);
 
   const { colorMode } = useColorMode();
-
-  const inputRef = useRef(null);
   
   // API Key
   // const [apiKey, setApiKey] = useState<string>(apiKeyApp);
@@ -167,10 +165,6 @@ export default function Chat(props: { apiKeyApp: string }) {
     }
 
     setLoading(false);
-
-    if (inputRef.current) {
-      inputRef.current.value = '';
-    }
   };
   // -------------- Copy Response --------------
   // const copyToClipboard = (text: string) => {
@@ -314,11 +308,10 @@ export default function Chat(props: { apiKeyApp: string }) {
         {/* Chat Input */}
         <Flex
           ms={{ base: '0px', xl: '60px' }}
-          mt="auto"
+          mt="20px"
           justifySelf={'flex-end'}
         >
           <Input
-            ref={inputRef}
             minH="54px"
             h="100%"
             border="1px solid"
@@ -333,12 +326,6 @@ export default function Chat(props: { apiKeyApp: string }) {
             _placeholder={placeholderColor}
             placeholder="Type your message here..."
             onChange={handleChange}
-            onKeyDown={(e) => {
-              if (e.key === 'Enter') {
-                e.preventDefault(); 
-                handleTranslate(); 
-              }
-            }}            
           />
           <Button
             variant="primary"

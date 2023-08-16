@@ -1,6 +1,6 @@
 'use client';
 import type { AppProps } from 'next/app';
-import { ChakraProvider, Box, Portal, useDisclosure } from '@chakra-ui/react';
+import { ChakraProvider, Box, Portal, Flex, useDisclosure } from '@chakra-ui/react';
 import theme from '@/theme/theme';
 import routes from '@/routes';
 import Sidebar from '@/components/sidebar/Sidebar';
@@ -30,7 +30,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
       <Box>
         <Sidebar setApiKey={setApiKey} routes={routes} />
         <Box
-          pt={{ base: '60px', md: '100px' }}
+          pt="auto"
           float="right"
           minHeight="100vh"
           height="100%"
@@ -55,18 +55,26 @@ function App({ Component, pageProps }: AppProps<{}>) {
               />
             </Box>
           </Portal>
-          <Box
+          <Flex
+            direction="column"
             mx="auto"
-            p={{ base: '20px', md: '30px' }}
-            pe="20px"
-            minH="100vh"
-            pt="50px"
+            px={{ base: '20px', md: '30px' }}
+            mt="auto"
+            mb="auto"
+            w={{ base: '100%', xl: 'calc( 100% - 290px )' }}
+            maxWidth={{ base: '100%', xl: 'calc( 100% - 290px )' }}
+            justifyContent="flex-end" // Align content at the bottom
+            minHeight="100vh" // Make sure the container takes up at least the full viewport height
           >
-            <Component apiKeyApp={apiKey} {...pageProps} />
-          </Box>
-          {/* <Box>
-            <Footer />
-          </Box> */}
+            <Box>
+              <Component apiKeyApp={apiKey} {...pageProps} />
+            </Box>
+
+            <Box>
+              <Footer />
+            </Box>
+          </Flex>
+
         </Box>
       </Box>
     </ChakraProvider>

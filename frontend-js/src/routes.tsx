@@ -9,6 +9,7 @@ import {
 import {  PiChatsCircleFill } from 'react-icons/pi'
 import { IoMdPerson } from 'react-icons/io';
 import { LuHistory } from 'react-icons/lu';
+import { FaQuestion } from 'react-icons/fa';
 import { RoundedChart } from '@/components/icons/Icons';
 
 // Auth Imports
@@ -23,13 +24,15 @@ const routes: IRoute[] = [
     ),
     collapse: false,
   },
-  // {
-  //   name: 'All Templates',
-  //   disabled: true,
-  //   path: '/all-templates',
-  //   icon: <Icon as={MdHome} width="20px" height="20px" color="inherit" />,
-  //   collapse: false,
-  // },
+  {
+    name: 'FAQ',
+    path: '/faq',
+    icon: (
+      <Icon as={FaQuestion} width="20px" height="20px" color="inherit" />
+    ),
+    collapse: false,
+  },  
+  
   // {
   //   name: 'My Projects',
   //   disabled: true,
