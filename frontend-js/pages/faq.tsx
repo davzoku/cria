@@ -28,7 +28,7 @@ import avatar from '/public/img/avatars/avatar.png';
 import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
 import { NextAvatar } from '@/components/image/Avatar';
 import Bg from '../public/img/chat/bg4.png';
-import { faqData } from './/constants/faqData';
+import { faqData } from '../src/constants/faqData';
 
 export default function Chat(props: { apiKeyApp: string }) {
 
