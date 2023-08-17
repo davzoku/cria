@@ -1,6 +1,5 @@
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
-import GoogleAnalytics from "@bradgarropy/next-google-analytics"
 
 export default function Document() {
   return (
