@@ -23,6 +23,7 @@ import {
   Heading
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
+import { useRouter } from "next/router";
 import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
 import avatar from '/public/img/avatars/avatar.png';
 import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
@@ -30,7 +31,21 @@ import { NextAvatar } from '@/components/image/Avatar';
 import Bg from '../public/img/chat/bg4.png';
 import { faqData } from '../src/constants/faqData';
 
+
 export default function Chat(props: { apiKeyApp: string }) {
+  const router = useRouter();
+  const { asPath } = router;
+
+  useEffect(() => {// Debugging: Check the value of asPath
+    if (asPath.includes("#")) {
+      const hash = asPath.split("#")[1];
+      const element = document.getElementById(hash);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+  }, [asPath]);
+
 
   const { colorMode } = useColorMode();
   
@@ -63,7 +78,7 @@ export default function Chat(props: { apiKeyApp: string }) {
       direction="column"
       position="relative"
     >
-      <Img
+      {/* <Img
         src={Bg.src}
         position={'absolute'}
         w="450px"
@@ -74,7 +89,18 @@ export default function Chat(props: { apiKeyApp: string }) {
           opacity: 0.1,
           filter: colorMode == 'dark' ? 'invert(1)' : 'none' // Apply invert filter only if colorMode is light
         }}
-      />
+      /> */}
+      <Img
+        src={Bg.src}
+        position="fixed" // Set the position to fixed
+        w="450px"
+        left="50%"
+        top="50%"
+        transform="translate(-50%, -50%)"
+        zIndex="-1" // Place the background image behind the content
+        opacity={0.1}
+        filter={colorMode === 'dark' ? 'invert(1)' : 'none'}
+      />      
       <Flex
         direction="column"
         mx="auto"
@@ -86,17 +112,20 @@ export default function Chat(props: { apiKeyApp: string }) {
       >
         {/* FAQ Section */}
         <Box>
-          <Heading as='h2' mb="10">
-            FAQ
-          </Heading>
+          <a href="#faq">
+            <Heading as='h2' mb="10">
+              FAQ
+            </Heading>
+          </a>
           {faqData.map((faq, index) => (
-            <Box key={index} mb="10">
-              <Text fontSize="xl" fontWeight="bold" mb="4" dangerouslySetInnerHTML={{ __html: faq.question }} />
-              <Text dangerouslySetInnerHTML={{ __html: faq.answer }} />
+            <Box id={`${faq.shortHeader}`} mb="10">
+              <a href={`#${faq.shortHeader}`}>
+                <Heading as='h3' fontWeight="bold" size="md"  mb="3" dangerouslySetInnerHTML={{ __html: faq.question }} />
+              </a>
+              <Text mb="10" dangerouslySetInnerHTML={{ __html: faq.answer }} />
             </Box>
           ))}
         </Box>
-      
       </Flex>
     </Flex>
   );

@@ -117,7 +117,7 @@ export default function Chat(props: { apiKeyApp: string }) {
     //   return;
     // }
     let data;
-    const defaultReply = "Zzz... Oh, hello! This baby llama needs a nap right now. Just so you know, I'm here for demo sessions only. If you're looking for more llama-tastic fun, make sure to contact my creator at walter.tengkw@gmail.com for a proper demo! Catch you on the flip side of dreamland! 🦙💤";
+    const defaultReply = "Zzz... Oh, hello! This baby llama needs a nap right now. Just so you know, I'm here for demo sessions only. If you have any questions, feel free to check the FAQ section or contact my creator at walter.tengkw\@gmail.com for a live demo! Catch you on the flip side of dreamland! 🦙💤";
     if (!response.ok) {
       setLoading(false);
       data = new ReadableStream({
@@ -172,6 +172,10 @@ export default function Chat(props: { apiKeyApp: string }) {
       inputRef.current.value = '';
     }
   };
+
+  const renderHtmlContent = (html: string) => {
+    return { __html: html };
+  };  
   // -------------- Copy Response --------------
   // const copyToClipboard = (text: string) => {
   //   const el = document.createElement('textarea');
@@ -203,7 +207,7 @@ export default function Chat(props: { apiKeyApp: string }) {
       direction="column"
       position="relative"
     >
-      <Img
+      {/* <Img
         src={Bg.src}
         position={'absolute'}
         w="450px"
@@ -214,7 +218,18 @@ export default function Chat(props: { apiKeyApp: string }) {
           opacity: 0.1,
           filter: colorMode == 'dark' ? 'invert(1)' : 'none' // Apply invert filter only if colorMode is light
         }}
-      />
+      /> */}
+      <Img
+        src={Bg.src}
+        position="fixed" // Set the position to fixed
+        w="450px"
+        left="50%"
+        top="50%"
+        transform="translate(-50%, -50%)"
+        zIndex="-1" // Place the background image behind the content
+        opacity={0.1}
+        filter={colorMode === 'dark' ? 'invert(1)' : 'none'}
+      />      
       <Flex
         direction="column"
         mx="auto"
