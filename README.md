@@ -7,7 +7,7 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 > krē-ə plural crias. : a baby llama, alpaca, vicuña, or guanaco.
 
 <p align="center">
-  <img src="assets/logo.jpeg" width="300" height="300" alt="Cria Logo"> <br>
+  <img src="assets/icon-512x512.png" width="300" height="300" alt="Cria Logo"> <br>
   <i>or what ChatGPT suggests, <b>"Crafting a Rapid prototype of an Intelligent llm App using open source resources"</b>.</i>
 </p>
 
