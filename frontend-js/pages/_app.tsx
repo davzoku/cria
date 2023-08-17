@@ -1,6 +1,6 @@
 'use client';
 import type { AppProps } from 'next/app';
-import { ChakraProvider, Box, Portal, Flex, useDisclosure } from '@chakra-ui/react';
+import { ChakraProvider, ColorModeScript, Box, Portal, Flex, useDisclosure } from '@chakra-ui/react';
 import theme from '@/theme/theme';
 import routes from '@/routes';
 import Sidebar from '@/components/sidebar/Sidebar';
@@ -27,6 +27,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
 
   return (
     <ChakraProvider theme={theme}>
+      <ColorModeScript initialColorMode="system" />
       <Box>
         <Sidebar setApiKey={setApiKey} routes={routes} />
         <Box
