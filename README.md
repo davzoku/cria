@@ -18,7 +18,7 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 - Integrated Next.js frontend for interactive user interface.
 
 <p align="center">
-  <img src="assets/cria-frontend-js.png" alt="Frontend"> <br>
+  <img src="assets/cria-frontend-js.jpeg" alt="Frontend"> <br>
   <i>Leveraging on open source resources such as <a href="https://github.com/horizon-ui/chatgpt-ai-template">Horizon AI Template</a></i>
 </p>
 
