@@ -1,6 +1,6 @@
 # Architecture
 
-This document describes the high-level architecture of CRIA. This document is based on [ARCHITECTURE.md](https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html)
+This document describes the high-level architecture of CRIA. This document is based on [ARCHITECTURE.md](https://matklad.github.io/2021/02/06/ARCHITECTURE.md.html).
 
 ## Overview
 
@@ -15,6 +15,8 @@ The high-level overview is as such:
 5. **API Serving through FastAPI:** FastAPI is used to build APIs for serving to the client application. This API server can dockerized and hosted locally or on the cloud. This server can be dockerized for local or cloud-based hosting.
 6. **User Interface with Next.js:** Concluding the process, a Next.js frontend application ingests with the API into an user-friendly interface. This Next.js application is served on [Netlify](https://www.netlify.com/).
 
-\_For the detailed information on design decisions made so far, please refer to the `/docs/adr` folder.
+_For the detailed information on design decisions made so far, please refer to the `/docs/adr` folder._
 
-![Architectural Diagram](../assets/architectural-diagram.png)
+<p align="center">
+  <img src="../assets/architectural-diagram.png"  alt="Architectural Diagram"> <br>
+</p>
