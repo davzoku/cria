@@ -117,7 +117,7 @@ export default function Chat(props: { apiKeyApp: string }) {
     //   return;
     // }
     let data;
-    const defaultReply = "Zzz... Oh, hello! This baby llama needs a nap right now. Just so you know, I'm here for demo sessions only. If you have any questions, feel free to check the FAQ section or contact my creator at walter.tengkw\@gmail.com for a live demo! Catch you on the flip side of dreamland! 🦙💤";
+    const defaultReply = "Zzz... Oh, hello! This baby llama needs a nap right now. Just so you know, I'm here for demo sessions only. If you have any questions, feel free to check the [FAQ section](/faq#why-is-cria-sleeping) or [contact my creator](mailto:walter.tengkw@gmail.com) for a live demo! Catch you on the flip side of dreamland! 💤 ";
     if (!response.ok) {
       setLoading(false);
       data = new ReadableStream({
