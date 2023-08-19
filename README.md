@@ -2,7 +2,7 @@
 
 Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/facebookresearch/llama).
 
-## What is Cria?
+## What is CRIA?
 
 > krē-ə plural crias. : a baby llama, alpaca, vicuña, or guanaco.
 
@@ -13,7 +13,7 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 
 ## Features
 
-- Demostration of instruction-tuning of LLM on **free colab instance**.
+- Demostration of instruction-tuning of LLM on _free colab instance_.
 - Utilized FastAPI for efficient model serving and inference deployment.
 - Integrated Next.js frontend for interactive user interface.
 
@@ -29,6 +29,24 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 | [cria-llama2-7b-v1.3](https://huggingface.co/davzoku/cria-llama2-7b-v1.3), <br> [cria-llama2-7b-v1.3_peft](https://huggingface.co/davzoku/cria-llama2-7b-v1.3_peft) | Merged / PEFT | [NousResearch/Llama-2-7b-chat-hf](https://huggingface.co/NousResearch/Llama-2-7b-chat-hf)     | [mlabonne/CodeLlama-2-20k](https://huggingface.co/datasets/mlabonne/CodeLlama-2-20k)                                   | [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1rYTs3qWJerrYwihf1j0f00cnzzcpAfYe) [![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/drive/1Wjs2I1VHjs6zT_GE42iEXsLtYh6VqiJU) | Latest       |
 | cria-llama2-7b-v1.1, cria-llama2-7b-v1.2                                                                                                                            | Merged / PEFT | [TinyPixel/Llama-2-7B-bf16-sharded](https://huggingface.co/TinyPixel/Llama-2-7B-bf16-sharded) | [n3rd0/DreamBook_Guanaco_Format](https://huggingface.co/datasets/n3rd0/DreamBook_Guanaco_Format)                       | N.A.                                                                                                                                                                                                                                                                                                            | Experimental |
 | cria-llama2-7b-v1.0                                                                                                                                                 | PEFT          | [TinyPixel/Llama-2-7B-bf16-sharded](https://huggingface.co/TinyPixel/Llama-2-7B-bf16-sharded) | [Elliot4AI/dolly-15k-chinese-guanacoformat](https://huggingface.co/datasets/Elliot4AI/dolly-15k-chinese-guanacoformat) | N.A.                                                                                                                                                                                                                                                                                                            | Experimental |
+
+## Documentation
+
+### Slides
+
+CRIA v1.3 was first presented in a private session on 18 Aug 2023. The slides is publicly available [here](https://docs.google.com/presentation/d/1HdHfl0XiGIvRd-R3AHTEZn8Ee9ibFTp_Dv-q1S5SgrQ/edit?usp=sharing).
+
+### Architectural Overview
+
+The overview of the project can be found at [/docs/architecture.md](/docs/architecture.md).
+
+### Architectural Decision Records (ADR)
+
+Please refer to the [/docs/adr/](/docs/adr/) folder for the detailed information on the list of design decisions made so far.
+
+### Model Evaluation
+
+The preliminary model evaluation can be be found at [/docs/model-eval](/docs/model-eval/) folder.
 
 ## References
 
