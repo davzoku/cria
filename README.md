@@ -46,7 +46,7 @@ Please refer to the [/docs/adr/](/docs/adr/) folder for the detailed information
 
 ### Model Evaluation
 
-The preliminary model evaluation can be be found at [/docs/model-eval](/docs/model-eval/) folder.
+The preliminary model evaluation can be be found at [/docs/model-eval/](/docs/model-eval/) folder.
 
 ## References
 
