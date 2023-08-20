@@ -1,5 +1,7 @@
 # 🍼🦙 CRIA
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a9502b61-04e1-4202-be27-e5bd304321ae/deploy-status)](https://app.netlify.com/sites/cria-chat/deploys)
+
 Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/facebookresearch/llama).
 
 ## What is CRIA?
