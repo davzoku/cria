@@ -1,4 +1,5 @@
 'use client';
+
 import {
   IconButton,
   Input,
@@ -7,6 +8,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import { SearchIcon } from '@chakra-ui/icons';
+
 export function SearchBar(props: {
   variant?: string;
   children?: JSX.Element;
@@ -69,7 +71,7 @@ export function SearchBar(props: {
         color={searchColor}
         fontWeight="500"
         _placeholder={{ color: 'gray.500', fontSize: '14px' }}
-        borderRadius={borderRadius ? borderRadius : '14px'}
+        borderRadius={borderRadius || '14px'}
         placeholder="Search..."
       />
     </InputGroup>

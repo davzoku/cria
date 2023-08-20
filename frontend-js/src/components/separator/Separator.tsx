@@ -1,4 +1,5 @@
 'use client';
+
 import { Flex, useColorModeValue } from '@chakra-ui/react';
 
 const HSeparator = (props: { variant?: string; [x: string]: any }) => {

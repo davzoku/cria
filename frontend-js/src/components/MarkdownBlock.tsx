@@ -34,7 +34,7 @@ export const MarkdownBlock: FC<Props> = ({
         {copyText}
       </button>
 
-      <div className="p-4 h-500px bg-[#1A1B26] text-white overflow-scroll rounded-md">
+      <div className="h-500px overflow-scroll rounded-md bg-[#1A1B26] p-4 text-white">
         <ReactMarkdown className="font-normal">{code}</ReactMarkdown>
       </div>
     </div>

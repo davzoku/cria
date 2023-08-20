@@ -1,5 +1,7 @@
 # 🍼🦙 CRIA
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/a9502b61-04e1-4202-be27-e5bd304321ae/deploy-status)](https://app.netlify.com/sites/cria-chat/deploys)
+
 Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/facebookresearch/llama).
 
 ## What is CRIA?
@@ -13,9 +15,11 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 
 ## Features
 
-- Demostration of instruction-tuning of LLM on _free colab instance_.
+- Demostration of instruction-tuning on latest open source LLM using a custom dataset on a _free colab instance_.
 - Utilized FastAPI for efficient model serving and inference deployment.
-- Integrated Next.js frontend for interactive user interface.
+  - Supports real-time with Server-Sent Events (SSE) for a seamless chat experience.
+- Enjoy a modern front-end built with Next.js and Chakra UI.
+- Supports both local deployment, and cloud deployment. (Coming Soon!)
 
 <p align="center">
   <img src="assets/cria-frontend-js.jpeg" alt="Frontend"> <br>
@@ -31,6 +35,10 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 | cria-llama2-7b-v1.0                                                                                                                                                 | PEFT          | [TinyPixel/Llama-2-7B-bf16-sharded](https://huggingface.co/TinyPixel/Llama-2-7B-bf16-sharded) | [Elliot4AI/dolly-15k-chinese-guanacoformat](https://huggingface.co/datasets/Elliot4AI/dolly-15k-chinese-guanacoformat) | N.A.                                                                                                                                                                                                                                                                                                            | Experimental |
 
 ## Documentation
+
+### Setup
+
+The instructions to run the various components, such as the API server and frontend interface, can be found at [/docs/setup.md](/docs/setup.md).
 
 ### Slides
 

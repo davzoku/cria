@@ -1,29 +1,30 @@
 'use client';
+
 // Chakra Imports
 import {
-  Box,
-  Button,
-  Center,
+  // Box,
+  // Button,
+  // Center,
   Flex,
-  Icon,
-  Link,
-  Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
-  Text,
+  // Icon,
+  // Link,
+  // Menu,
+  // MenuButton,
+  // MenuItem,
+  // MenuList,
+  // Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
-import avatar from '/public/img/avatars/avatar.png';
-import { NextAvatar } from '@/components/image/Avatar';
-import { SearchBar } from '@/components/navbar/searchBar/SearchBar';
+// import { IoMdMoon, IoMdSunny } from 'react-icons/io';
+// import { MdInfoOutline } from 'react-icons/md';
+// import { NextAvatar } from '@/components/image/Avatar';
+// import { SearchBar } from '@/components/navbar/searchBar/SearchBar';
 import { SidebarResponsive } from '@/components/sidebar/Sidebar';
-import { IoMdMoon, IoMdSunny } from 'react-icons/io';
-import { MdInfoOutline } from 'react-icons/md';
 // import APIModal from '@/components/apiModal';
-import NavLink from '../link/NavLink';
 import routes from '@/routes';
+// import avatar from '../../../../../../../../public/img/avatars/avatar.png';
+// import NavLink from '../link/NavLink';
 
 export default function HeaderLinks(props: {
   secondary: boolean;
@@ -33,7 +34,7 @@ export default function HeaderLinks(props: {
   const { colorMode, toggleColorMode } = useColorMode();
   // Chakra Color Mode
   const navbarIcon = useColorModeValue('gray.500', 'white');
-  let menuBg = useColorModeValue('transparent', 'transparent');
+  const menuBg = useColorModeValue('transparent', 'transparent');
   const textColor = useColorModeValue('navy.700', 'white');
   const borderColor = useColorModeValue('#E6ECFA', 'rgba(135, 140, 189, 0.3)');
   const shadow = useColorModeValue(
@@ -62,7 +63,6 @@ export default function HeaderLinks(props: {
       borderRadius="30px"
       // boxShadow={shadow}
     >
-      
       {/* <SearchBar
         mb={() => {
           if (secondary) {
@@ -78,8 +78,6 @@ export default function HeaderLinks(props: {
       {/* <Button style={{ display: 'none' }} /> */}
       <SidebarResponsive routes={routes} />
       {/* <APIModal setApiKey={setApiKey} /> */}
-
-
 
       {/* <Button
         variant="no-hover"
@@ -110,10 +108,10 @@ export default function HeaderLinks(props: {
             borderRadius={'50%'}
           />
           <Center top={0} left={0} position={'absolute'} w={'100%'} h={'100%'}> */}
-            {/* <Text fontSize={'xs'} fontWeight="bold" color={'white'}>
+      {/* <Text fontSize={'xs'} fontWeight="bold" color={'white'}>
               KW
             </Text> */}
-            {/* <NextAvatar h="40px" w="40px" src={avatar}  />
+      {/* <NextAvatar h="40px" w="40px" src={avatar}  />
           </Center>
         </MenuButton>
         <MenuList
@@ -139,7 +137,7 @@ export default function HeaderLinks(props: {
               👋&nbsp; Hey, Guest
             </Text>
           </Flex> */}
-          {/* <Flex flexDirection="column" p="10px">
+      {/* <Flex flexDirection="column" p="10px">
             <NavLink href="/settings">
               <MenuItem
                 _hover={{ bg: 'none' }}
@@ -176,7 +174,7 @@ export default function HeaderLinks(props: {
               </Text>
             </MenuItem>
           </Flex> */}
-        {/* </MenuList>
+      {/* </MenuList>
       </Menu> */}
     </Flex>
   );

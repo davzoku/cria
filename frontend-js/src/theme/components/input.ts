@@ -1,4 +1,5 @@
 import { mode } from '@chakra-ui/theme-tools';
+
 export const inputStyles = {
   components: {
     Input: {

@@ -1,22 +1,23 @@
 'use client';
+
 /*eslint-disable*/
 
-import Link from '@/components/link/Link';
-import MessageBoxChat from '@/components/MessageBox';
-import { ChatBody, OpenAIModel } from '@/types/types';
+// import Link from '@/components/link/Link';
+// import MessageBoxChat from '@/components/MessageBox';
+// import { ChatBody, OpenAIModel } from '@/types/types';
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
+  // Accordion,
+  // AccordionButton,
+  // AccordionIcon,
+  // AccordionItem,
+  // AccordionPanel,
   Box,
-  Button,
+  // Button,
   Flex,
-  Icon,
-  Image,
+  // Icon,
+  // Image,
   Img,
-  Input,
+  // Input,
   Text,
   useColorModeValue,
   useColorMode,
@@ -24,10 +25,10 @@ import {
 } from '@chakra-ui/react';
 import { useEffect, useState } from 'react';
 import { useRouter } from "next/router";
-import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
-import avatar from '/public/img/avatars/avatar.png';
-import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
-import { NextAvatar } from '@/components/image/Avatar';
+// import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
+// import avatar from '/public/img/avatars/avatar.png';
+// import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
+// import { NextAvatar } from '@/components/image/Avatar';
 import Bg from '../public/img/chat/bg4.png';
 import { faqData } from '../src/constants/faqData';
 

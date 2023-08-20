@@ -1,0 +1,4 @@
+/public/
+/*.js
+graphqlTypes.ts
+*.d.ts

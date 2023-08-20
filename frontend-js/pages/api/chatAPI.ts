@@ -22,17 +22,16 @@ const handler = async (req: Request): Promise<Response> => {
     //   return new Response('API key not found', { status: 500 });
     // }
 
-    if (apiType === "FASTAPI") {
+    if (apiType === 'FASTAPI') {
       stream = await FastAPI(inputCode, model, apiKeyFinal);
-    } else if (apiType === "FASTAPI") {
+    } else if (apiType === 'OPENLLM') {
       stream = await OpenLLMAPI(inputCode, model, apiKeyFinal);
-    } else if  (apiType === "FASTAPI") {  
+    } else if (apiType === 'OPENAI') {
       stream = await OpenAIStream(inputCode, model, apiKeyFinal);
     } else {
       // not implemented
-      console.error("Unsupported API type:", apiType);
+      console.error('Unsupported API type:', apiType);
     }
-
 
     return new Response(stream);
   } catch (error) {
