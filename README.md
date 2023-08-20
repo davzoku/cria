@@ -15,9 +15,11 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 
 ## Features
 
-- Demostration of instruction-tuning of LLM on _free colab instance_.
+- Demostration of instruction-tuning on latest open source LLM using a custom dataset on a _free colab instance_.
 - Utilized FastAPI for efficient model serving and inference deployment.
-- Integrated Next.js frontend for interactive user interface.
+  - Supports real-time with Server-Sent Events (SSE) for a seamless chat experience.
+- Enjoy a modern front-end built with Next.js and Chakra UI.
+- Supports both local deployment, and cloud deployment. (Coming Soon!)
 
 <p align="center">
   <img src="assets/cria-frontend-js.jpeg" alt="Frontend"> <br>
