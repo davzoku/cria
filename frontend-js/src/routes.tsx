@@ -1,12 +1,12 @@
 import { Icon } from '@chakra-ui/react';
 import {
-  MdFileCopy,
-  MdHome,
-  MdLock,
-  MdLayers,
+  // MdFileCopy,
+  // MdHome,
+  // MdLock,
+  // MdLayers,
   MdOutlineManageAccounts,
 } from 'react-icons/md';
-import {  PiChatsCircleFill } from 'react-icons/pi'
+import { PiChatsCircleFill } from 'react-icons/pi';
 import { IoMdPerson } from 'react-icons/io';
 import { LuHistory } from 'react-icons/lu';
 import { FaQuestion } from 'react-icons/fa';
@@ -27,12 +27,10 @@ const routes: IRoute[] = [
   {
     name: 'FAQ',
     path: '/faq',
-    icon: (
-      <Icon as={FaQuestion} width="20px" height="20px" color="inherit" />
-    ),
+    icon: <Icon as={FaQuestion} width="20px" height="20px" color="inherit" />,
     collapse: false,
-  },  
-  
+  },
+
   // {
   //   name: 'My Projects',
   //   disabled: true,

@@ -37,12 +37,12 @@ export const CodeBlock: FC<Props> = ({
         }}
       >
         {copyText}
-      </button> 
+      </button>
       <CodeMirror
         editable={editable}
         value={code}
         minHeight={`${height}px`}
-        className="rounded-md overflow-scroll"
+        className="overflow-scroll rounded-md"
         extensions={[StreamLanguage.define(go)]}
         theme={tokyoNight}
         onChange={(value) => onChange(value)}

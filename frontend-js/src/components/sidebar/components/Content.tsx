@@ -1,37 +1,37 @@
 'use client';
+
 // chakra imports
 import {
-  Badge,
+  // Badge,
   Box,
   Button,
   Flex,
   Icon,
-  Link,
-  Menu,
-  MenuButton,
-  MenuList,
+  // Link,
+  // Menu,
+  // MenuButton,
+  // MenuList,
   Stack,
   Text,
   useColorMode,
   useColorModeValue,
 } from '@chakra-ui/react';
-import NavLink from '@/components/link/NavLink';
+import { PropsWithChildren } from 'react';
+import { IoMdMoon, IoMdSunny } from 'react-icons/io';
+// import { FiLogOut } from 'react-icons/fi';
+// import { LuHistory } from 'react-icons/lu';
+// import { MdOutlineManageAccounts, MdOutlineSettings } from 'react-icons/md';
+// import NavLink from '@/components/link/NavLink';
 //   Custom components
-import avatar from '/public/img/avatars/avatar.png';
-import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
 import { NextAvatar } from '@/components/image/Avatar';
 // import APIModal from '@/components/apiModal';
 import Brand from '@/components/sidebar/components/Brand';
 import Links from '@/components/sidebar/components/Links';
-import SidebarCard from '@/components/sidebar/components/SidebarCard';
-import { RoundedChart } from '@/components/icons/Icons';
-import { PropsWithChildren } from 'react';
+// import SidebarCard from '@/components/sidebar/components/SidebarCard';
+// import { RoundedChart } from '@/components/icons/Icons';
 import { IRoute } from '@/types/navigation';
-import { IoMdPerson } from 'react-icons/io';
-import { FiLogOut } from 'react-icons/fi';
-import { LuHistory } from 'react-icons/lu';
-import { IoMdMoon, IoMdSunny } from 'react-icons/io';
-import { MdOutlineManageAccounts, MdOutlineSettings } from 'react-icons/md';
+import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
+// import avatar from '/public/img/avatars/avatar.png';
 
 // FUNCTIONS
 
@@ -75,7 +75,7 @@ function SidebarContent(props: SidebarContent) {
         </Box>
       </Stack>
 
-      <Box mt="60px" width={'100%'} display={'flex'} justifyContent={'center'}>
+      <Box mt="60px" width="100%" display="flex" justifyContent="center">
         {/* <SidebarCard /> */}
       </Box>
       {/* <APIModal setApiKey={setApiKey} sidebar={true} /> */}
@@ -122,23 +122,23 @@ function SidebarContent(props: SidebarContent) {
         
         </Button> */}
         <Button
-        variant="no-hover"
-        bg="transparent"
-        p="0px"
-        minW="unset"
-        minH="unset"
-        h="18px"
-        w="max-content"
-        onClick={toggleColorMode}
-      >
-        <Icon
-          me="10px"
+          variant="no-hover"
+          bg="transparent"
+          p="0px"
+          minW="unset"
+          minH="unset"
           h="18px"
-          w="18px"
-          color={navbarIcon}
-          as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
-        />
-      </Button>        
+          w="max-content"
+          onClick={toggleColorMode}
+        >
+          <Icon
+            me="10px"
+            h="18px"
+            w="18px"
+            color={navbarIcon}
+            as={colorMode === 'light' ? IoMdMoon : IoMdSunny}
+          />
+        </Button>
       </Flex>
     </Flex>
   );

@@ -6,7 +6,7 @@ export const findCurrentRoute = (
   routes: IRoute[],
   pathname: string,
 ): IRoute | undefined => {
-  for (let route of routes) {
+  for (const route of routes) {
     if (route.items) {
       const found = findCurrentRoute(route.items, pathname);
       if (found) return found;
@@ -28,12 +28,10 @@ export const getActiveNavbar = (
 ): boolean => {
   const route = findCurrentRoute(routes, pathname);
   if (route?.secondary) return route?.secondary;
-  else return false;
+  return false;
 };
 
 export const getActiveNavbarText = (
   routes: IRoute[],
   pathname: string,
-): string | boolean => {
-  return getActiveRoute(routes, pathname) || false;
-};
+): string | boolean => getActiveRoute(routes, pathname) || false;

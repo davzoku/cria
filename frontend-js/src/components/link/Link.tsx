@@ -1,8 +1,7 @@
 'use client';
-import { ButtonProps } from '@chakra-ui/react';
-import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
-import { Button } from '@chakra-ui/react';
+import { ButtonProps, Button } from '@chakra-ui/react';
+import NextLink, { LinkProps as NextLinkProps } from 'next/link';
 
 type LinkProps = ButtonProps & NextLinkProps;
 

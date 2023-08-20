@@ -1,4 +1,5 @@
 'use client';
+
 /*eslint-disable*/
 
 import Link from '@/components/link/Link';
@@ -329,7 +330,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         {/* Chat Input */}
         <Flex
           ms={{ base: '0px', xl: '60px' }}
-          mt="auto"
+          mt="20px"
           justifySelf={'flex-end'}
         >
           <Input

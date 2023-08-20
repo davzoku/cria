@@ -1,4 +1,5 @@
 'use client';
+
 /*eslint-disable*/
 
 import Link from '@/components/link/Link';

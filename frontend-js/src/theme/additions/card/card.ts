@@ -1,4 +1,5 @@
 import { mode } from '@chakra-ui/theme-tools';
+
 const Card = {
   baseStyle: (props: any) => ({
     p: '20px',

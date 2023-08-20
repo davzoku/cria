@@ -1,5 +1,5 @@
+// import { Readable } from 'stream';
 import endent from 'endent';
-import { Readable } from 'stream';
 import {
   createParser,
   ParsedEvent,
@@ -7,9 +7,7 @@ import {
 } from 'eventsource-parser';
 
 const createPrompt = (inputCode: string) => {
-  const data = (inputCode: string) => {
-    return endent`${inputCode}`;
-  };
+  const data = (inputCode: string) => endent`${inputCode}`;
 
   if (inputCode) {
     return data(inputCode);
@@ -25,8 +23,8 @@ export const OpenAIStream = async (
 
   const system = { role: 'system', content: prompt };
 
-  const openai_api = process.env.OPENAI_API || ''; 
-  const res = await fetch(openai_api, {
+  const openaiApi = process.env.OPENAI_API || '';
+  const res = await fetch(openaiApi, {
     headers: {
       'Content-Type': 'application/json',
       Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
@@ -44,7 +42,7 @@ export const OpenAIStream = async (
   const decoder = new TextDecoder();
 
   if (res.status !== 200) {
-    const statusText = res.statusText;
+    const { statusText } = res;
     const result = await res.body?.getReader().read();
     throw new Error(
       `CRIA API returned an error: ${
@@ -57,7 +55,7 @@ export const OpenAIStream = async (
     async start(controller) {
       const onParse = (event: ParsedEvent | ReconnectInterval) => {
         if (event.type === 'event') {
-          const data = event.data;
+          const { data } = event;
 
           if (data === '[DONE]') {
             controller.close();
@@ -75,7 +73,7 @@ export const OpenAIStream = async (
         }
       };
 
-      const parser = createParser(onParse);  
+      const parser = createParser(onParse);
 
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
@@ -93,23 +91,23 @@ export const FastAPI = async (
 ) => {
   const prompt = createPrompt(inputCode);
 
-  const fastapi_api = process.env.FASTAPI_API || '';
-  const res = await fetch(fastapi_api, {      
+  const fastapiApi = process.env.FASTAPI_API || '';
+  const res = await fetch(fastapiApi, {
     headers: {
       // 'Content-Type': 'application/json',
       // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
     },
     method: 'POST',
     body: JSON.stringify({
-      prompt: prompt
+      prompt,
     }),
   });
 
   const encoder = new TextEncoder();
   const decoder = new TextDecoder();
-  console.log(res)
+  console.log(res);
   if (res.status !== 200) {
-    const statusText = res.statusText;
+    const { statusText } = res;
     const result = await res.body?.getReader().read();
     throw new Error(
       `CRIA API returned an error: ${
@@ -122,7 +120,7 @@ export const FastAPI = async (
     async start(controller) {
       const onParse = (event: ParsedEvent | ReconnectInterval) => {
         if (event.type === 'event') {
-          const data = event.data;
+          const { data } = event;
 
           if (data === '[DONE]') {
             controller.close();
@@ -130,7 +128,7 @@ export const FastAPI = async (
           }
 
           try {
-            const text=data
+            const text = data;
             const queue = encoder.encode(text);
             controller.enqueue(queue);
           } catch (e) {
@@ -139,7 +137,7 @@ export const FastAPI = async (
         }
       };
 
-      const parser = createParser(onParse);    
+      const parser = createParser(onParse);
 
       for await (const chunk of res.body as any) {
         parser.feed(decoder.decode(chunk));
@@ -153,7 +151,7 @@ export const FastAPI = async (
 export const OpenLLMAPI = async (
   prompt: string,
   model: string,
-  key: string | undefined
+  key: string | undefined,
 ) => {
   const requestBody = {
     prompt,
@@ -192,8 +190,8 @@ export const OpenLLMAPI = async (
     },
   };
 
-  const openllm_api = process.env.OPENLLM_API  || '';
-  const response = await fetch(openllm_api, {      
+  const openllmApi = process.env.OPENLLM_API || '';
+  const response = await fetch(openllmApi, {
     headers: {
       'Content-Type': 'application/json',
       // Authorization: `Bearer ${key || process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,

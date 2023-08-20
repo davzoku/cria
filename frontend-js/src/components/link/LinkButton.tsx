@@ -1,4 +1,5 @@
 'use client';
+
 import Link, { LinkProps } from 'next/link';
 import { Button, ButtonProps } from '@chakra-ui/react';
 

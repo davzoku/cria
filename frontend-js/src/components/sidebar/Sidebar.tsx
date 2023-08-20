@@ -1,4 +1,5 @@
 'use client';
+
 import React, { PropsWithChildren } from 'react';
 
 // chakra imports
@@ -14,15 +15,15 @@ import {
   DrawerContent,
   DrawerCloseButton,
 } from '@chakra-ui/react';
+import { Scrollbars } from 'react-custom-scrollbars-2';
+import { IoMenuOutline } from 'react-icons/io5';
 import Content from '@/components/sidebar/components/Content';
 import {
   renderThumb,
   renderTrack,
   renderView,
 } from '@/components/scrollbar/Scrollbar';
-import { Scrollbars } from 'react-custom-scrollbars-2';
 
-import { IoMenuOutline } from 'react-icons/io5';
 import { IRoute } from '@/types/navigation';
 import { isWindowAvailable } from '@/utils/navigation';
 
@@ -34,15 +35,15 @@ export interface SidebarProps extends PropsWithChildren {
 function Sidebar(props: SidebarProps) {
   const { routes, setApiKey } = props;
   // this is for the rest of the collapses
-  let variantChange = '0.2s linear';
-  let shadow = useColorModeValue(
+  const variantChange = '0.2s linear';
+  const shadow = useColorModeValue(
     '14px 17px 40px 4px rgba(112, 144, 176, 0.08)',
     'unset',
   );
   // Chakra Color Mode
-  let sidebarBg = useColorModeValue('white', 'navy.800');
-  let sidebarRadius = '14px';
-  let sidebarMargins = '0px';
+  const sidebarBg = useColorModeValue('white', 'navy.800');
+  const sidebarRadius = '14px';
+  const sidebarMargins = '0px';
   // SIDEBAR
   return (
     <Box display={{ base: 'none', xl: 'block' }} position="fixed" minH="100%">
@@ -78,8 +79,8 @@ function Sidebar(props: SidebarProps) {
 
 // FUNCTIONS
 export function SidebarResponsive(props: { routes: IRoute[] }) {
-  let sidebarBackgroundColor = useColorModeValue('white', 'navy.800');
-  let menuColor = useColorModeValue('gray.400', 'white');
+  const sidebarBackgroundColor = useColorModeValue('white', 'navy.800');
+  const menuColor = useColorModeValue('gray.400', 'white');
   // let menuColor = useColorModeValue('gray.800', 'white');
   // // SIDEBAR
   const { isOpen, onOpen, onClose } = useDisclosure();

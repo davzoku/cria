@@ -1,4 +1,5 @@
 'use client';
+
 // Chakra imports
 import {
   Flex,
@@ -27,7 +28,7 @@ export default function Default(props: {
   );
 
   return (
-    <Flex direction="column" mb={mb ? mb : '30px'}>
+    <Flex direction="column" mb={mb || '30px'}>
       <FormLabel
         display="flex"
         ms="10px"

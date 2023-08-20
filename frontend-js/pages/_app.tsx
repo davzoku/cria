@@ -1,14 +1,22 @@
 'use client';
+
 import type { AppProps } from 'next/app';
-import { ChakraProvider, ColorModeScript, Box, Portal, Flex, useDisclosure } from '@chakra-ui/react';
+import {
+  ChakraProvider,
+  ColorModeScript,
+  Box,
+  Portal,
+  Flex,
+  useDisclosure,
+} from '@chakra-ui/react';
+import { usePathname } from 'next/navigation';
+import { useEffect, useState } from 'react';
 import theme from '@/theme/theme';
 import routes from '@/routes';
 import Sidebar from '@/components/sidebar/Sidebar';
 import Footer from '@/components/footer/FooterAdmin';
 import Navbar from '@/components/navbar/NavbarAdmin';
 import { getActiveRoute, getActiveNavbar } from '@/utils/navigation';
-import { usePathname } from 'next/navigation';
-import { useEffect, useState } from 'react';
 import '@/styles/App.css';
 import '@/styles/Contact.css';
 import '@/styles/Plugins.css';
@@ -50,7 +58,7 @@ function App({ Component, pageProps }: AppProps<{}>) {
               <Navbar
                 setApiKey={setApiKey}
                 onOpen={onOpen}
-                logoText={'Horizon UI Dashboard PRO'}
+                logoText="Horizon UI Dashboard PRO"
                 brandText={getActiveRoute(routes, pathname)}
                 secondary={getActiveNavbar(routes, pathname)}
               />
@@ -75,7 +83,6 @@ function App({ Component, pageProps }: AppProps<{}>) {
               <Footer />
             </Box>
           </Flex>
-
         </Box>
       </Box>
     </ChakraProvider>
