@@ -14,20 +14,22 @@ It's important to note that these Colab notebooks require access to free T4 GPU 
 
 We are currently using FastAPI to serve API. Ensure that you have Python and pip installed.
 
-1. From the root folder, install the required packages using pip:
+1. Download CRIA v1.3 GGML model from [HuggingFace](https://huggingface.co/davzoku/cria-llama2-7b-v1.3-GGML). Move the model to this directory, `models/cria-llama2-7b-v1.3.ggmlv3.q4_0.bin`.
+
+2. From the root folder, install the required packages using pip:
 
 ```
 pip install -r requirements.txt
 ```
 
-2. Start the FastAPI server:
+3. Start the FastAPI server:
 
 ```
 cd scripts/
 uvicorn scripts.fastapi_server:app --reload --port 8000
 ```
 
-3. Access the Swagger API documentation by navigating to `localhost:8000/docs`` in your web browser.
+4. Access the Swagger API documentation by navigating to `localhost:8000/docs`` in your web browser.
 
 ## Frontend
 
