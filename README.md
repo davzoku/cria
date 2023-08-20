@@ -34,6 +34,10 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 
 ## Documentation
 
+### Setup
+
+The instructions to run the various components, such as the API server and frontend interface, can be found at [/docs/setup.md](/docs/setup.md).
+
 ### Slides
 
 CRIA v1.3 was first presented in a private session on 18 Aug 2023. The slides is publicly available [here](https://docs.google.com/presentation/d/1HdHfl0XiGIvRd-R3AHTEZn8Ee9ibFTp_Dv-q1S5SgrQ/edit?usp=sharing).
