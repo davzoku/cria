@@ -23,7 +23,7 @@ import {
   useColorMode
 } from '@chakra-ui/react';
 import { useEffect, useState, useRef } from 'react';
-import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
+// import { MdAutoAwesome, MdBolt, MdEdit, MdPerson } from 'react-icons/md';
 import avatar from '/public/img/avatars/avatar.png';
 import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
 import { NextAvatar } from '@/components/image/Avatar';
@@ -225,7 +225,7 @@ export default function Chat(props: { apiKeyApp: string }) {
         position="fixed" // Set the position to fixed
         w="450px"
         left="50%"
-        top="50%"
+        top="40%"
         transform="translate(-50%, -50%)"
         zIndex="-1" // Place the background image behind the content
         opacity={0.1}
