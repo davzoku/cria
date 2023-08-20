@@ -103,6 +103,9 @@ export const globalStyles = {
       html: {
         fontFamily: 'Plus Jakarta Sans',
       },
+      a: {
+        textDecoration: 'underline',
+      },
     }),
   },
 };

@@ -7,6 +7,36 @@ export default function Document() {
       <Head>
         <link rel="manifest" href="/manifest.json" />
         <title>CRIA: Your Friendly Baby Llama Chatbot</title>
+        <meta property="og:title" content="CRIA: Your Friendly Baby Llama Chatbot" />
+        <meta property="og:url" content="https://chat.walterteng.com"></meta>
+        <meta
+          property="og:description"
+          content="A ChatGPT-like chatbot powered by our open source large language model"
+        />
+        <meta
+          property="og:image"
+          content="/cria-frontend-js.jpeg"
+        />        
+        <meta
+          property="twitter:card"
+          content="summary_large_image"
+        />      
+        <meta
+          property="twitter:creator"
+          content="@davzoku"
+        />        
+        <meta
+          property="twitter:title"
+          content="CRIA: Your Friendly Baby Llama Chatbot"
+        />        
+        <meta
+          property="twitter:description"
+          content="A ChatGPT-like chatbot powered by our open source large language model"
+        />                
+        <meta
+          property="twitter:image"
+          content="/cria-frontend-js.jpeg"
+        />                
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS}`}></script>
         <script dangerouslySetInnerHTML={{
           __html: `
