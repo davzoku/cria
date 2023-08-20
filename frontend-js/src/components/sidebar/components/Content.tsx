@@ -30,7 +30,7 @@ import Links from '@/components/sidebar/components/Links';
 // import SidebarCard from '@/components/sidebar/components/SidebarCard';
 // import { RoundedChart } from '@/components/icons/Icons';
 import { IRoute } from '@/types/navigation';
-import avatar_rabbit from '/public/img/avatars/avatar_rabbit.png';
+import avatar_rabbit from '../../../../public/img/avatars/avatar_rabbit.png';
 // import avatar from '/public/img/avatars/avatar.png';
 
 // FUNCTIONS
