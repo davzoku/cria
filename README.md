@@ -6,12 +6,15 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 
 ## What is CRIA?
 
-> krē-ə plural crias. : a baby llama, alpaca, vicuña, or guanaco.
+> **Hint:** krē-ə plural crias; a baby llama, alpaca, vicuña, or guanaco.
 
 <p align="center">
   <img src="assets/icon-512x512.png" width="300" height="300" alt="Cria Logo"> <br>
-  <i>or what ChatGPT suggests, <b>"Crafting a Rapid prototype of an Intelligent llm App using open source resources"</b>.</i>
 </p>
+
+With ChatGPT's help, CRIA also stands for **"Crafting a Rapid prototype of an Intelligent llm App using open source resources"**. This encapsulates the objective of this project perfectly.
+
+Additionally, akin to a baby llama in nature, CRIA pays homage to its foundational model, Meta's Llama-2 7B Large Language Model.
 
 ## Features
 
@@ -22,9 +25,19 @@ Welcome to CRIA, a LLM model series based on [Llama 2-7B](https://github.com/fac
 - Supports both local deployment, and cloud deployment. (Coming Soon!)
 
 <p align="center">
-  <img src="assets/cria-frontend-js.jpeg" alt="Frontend"> <br>
+  <a href="https://www.youtube.com/watch?v=OTsBGFcVc8k"><img src="assets/cria-frontend-js.jpeg" alt="Frontend"></a><br>
   <i>Leveraging on open source resources such as <a href="https://github.com/horizon-ui/chatgpt-ai-template">Horizon AI Template</a></i>
 </p>
+
+## What You'll Find Here
+
+In this repository, you'll find:
+
+**Code:** Dive into the technical details of our chatbot implementation, including the training process, API server implementation, the integration of Next.js for the user interface, and more.
+
+**Documentation:** Detailed documentation to help you understand and replicate the CRIA setup, from model selection to deployment considerations.
+
+**Demo:** Access a live demo showcasing CRIA in action.
 
 ## Model History
 

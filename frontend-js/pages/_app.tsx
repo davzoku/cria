@@ -22,7 +22,7 @@ import '@/styles/Contact.css';
 import '@/styles/Plugins.css';
 import '@/styles/MiniCalendar.css';
 
-function App({ Component, pageProps }: AppProps<{}>) {
+function App({ Component, pageProps }: AppProps<Record<string, never>>) {
   const pathname = usePathname();
   const [apiKey, setApiKey] = useState('');
   const { isOpen, onOpen, onClose } = useDisclosure();

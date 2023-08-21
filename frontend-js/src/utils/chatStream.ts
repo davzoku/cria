@@ -6,11 +6,11 @@ import {
   ReconnectInterval,
 } from 'eventsource-parser';
 
-const createPrompt = (inputCode: string) => {
-  const data = (inputCode: string) => endent`${inputCode}`;
+const createPrompt = (input: string) => {
+  const data = () => endent`${input}`;
 
-  if (inputCode) {
-    return data(inputCode);
+  if (input) {
+    return data();
   }
 };
 
