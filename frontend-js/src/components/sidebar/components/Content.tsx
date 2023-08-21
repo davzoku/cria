@@ -30,7 +30,7 @@ import Links from '@/components/sidebar/components/Links';
 // import SidebarCard from '@/components/sidebar/components/SidebarCard';
 // import { RoundedChart } from '@/components/icons/Icons';
 import { IRoute } from '@/types/navigation';
-import avatar_rabbit from '../../../../public/img/avatars/avatar_rabbit.png';
+import avatarRabbit from '../../../../public/img/avatars/avatar_rabbit.png';
 // import avatar from '/public/img/avatars/avatar.png';
 
 // FUNCTIONS
@@ -87,7 +87,7 @@ function SidebarContent(props: SidebarContent) {
         borderRadius="30px"
         p="14px"
       >
-        <NextAvatar h="34px" w="34px" src={avatar_rabbit} me="10px" />
+        <NextAvatar h="34px" w="34px" src={avatarRabbit} me="10px" />
         <Text color={textColor} fontSize="xs" fontWeight="600" me="10px">
           Guest
         </Text>
