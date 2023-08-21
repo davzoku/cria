@@ -25,8 +25,8 @@ Additionally, akin to a baby llama in nature, CRIA pays homage to its foundation
 - Supports both local deployment, and cloud deployment. (Coming Soon!)
 
 <p align="center">
-  <a href="https://www.youtube.com/watch?v=OTsBGFcVc8k"><img src="assets/cria-frontend-js.jpeg" alt="Frontend"></a><br>
-  <i>Leveraging on open source resources such as <a href="https://github.com/horizon-ui/chatgpt-ai-template">Horizon AI Template</a></i>
+  <a href="https://www.youtube.com/watch?v=OTsBGFcVc8k"><img src="assets/youtube-demo.jpeg" alt="Frontend"></a><br>
+  <b>Demo:</b> Leveraging on open source resources such as <a href="https://github.com/horizon-ui/chatgpt-ai-template">Horizon AI Template</a>
 </p>
 
 ## What You'll Find Here
