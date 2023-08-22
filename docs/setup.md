@@ -16,6 +16,8 @@ We are currently using FastAPI to serve API. Ensure that you have Python and pip
 
 1. Download CRIA v1.3 GGML model from [HuggingFace](https://huggingface.co/davzoku/cria-llama2-7b-v1.3-GGML). Move the model to this directory, `models/cria-llama2-7b-v1.3.ggmlv3.q4_0.bin`.
 
+#### To run it local without Docker
+
 2. From the root folder, install the required packages using pip:
 
 ```
@@ -29,7 +31,23 @@ cd scripts/
 uvicorn scripts.fastapi_server:app --reload --port 8000
 ```
 
-4. Access the Swagger API documentation by navigating to `localhost:8000/docs`` in your web browser.
+4.  Access the Swagger API documentation by navigating to `localhost:8000/docs`` in your web browser.
+
+#### To run it with Docker
+
+2. From the root folder, run the following code to build the Docker image.
+
+```
+docker build -t "cria-fastapi:0.01" -f fastapi.Dockerfile .
+```
+
+3. Run the docker image; map port 8000 on host machine to port 80 inside the docker container
+
+```
+docker run -it --rm -p 8000:80 "cria-fastapi:0.0.1"
+```
+
+4.  Access the Swagger API documentation by navigating to `localhost:8000/docs`` in your web browser.
 
 ## Frontend
 
