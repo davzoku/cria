@@ -53,6 +53,10 @@ In this repository, you'll find:
 
 The instructions to run the various components, such as the API server and frontend interface, can be found at [/docs/setup.md](/docs/setup.md).
 
+### Deployment
+
+The instructions to deploy the API server and frontend on the cloud, can be found at [/docs/deployment.md](/docs/deployment.md).
+
 ### Slides
 
 CRIA v1.3 was first presented in a private session on 18 Aug 2023. The slides is publicly available [here](https://docs.google.com/presentation/d/1HdHfl0XiGIvRd-R3AHTEZn8Ee9ibFTp_Dv-q1S5SgrQ/edit?usp=sharing).

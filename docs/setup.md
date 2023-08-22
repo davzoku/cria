@@ -38,7 +38,7 @@ uvicorn scripts.fastapi_server:app --reload --port 8000
 2. From the root folder, run the following code to build the Docker image.
 
 ```
-docker build -t "cria-fastapi:0.01" -f fastapi.Dockerfile .
+docker build -t "cria-fastapi:0.0.1" -f fastapi.Dockerfile .
 ```
 
 3. Run the docker image; map port 8000 on host machine to port 80 inside the docker container
