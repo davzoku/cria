@@ -3,11 +3,17 @@
   "background_color": "#0b1437",
   "display": "standalone",
   "scope": "/",
-  "start_url": "/",
+  "start_url": "/?utm_source=homescreen",
   "name": "CRIA",
   "short_name": "CRIA",
   "description": "A Intelligent Chatbot App",
   "icons": [
+    {
+      "src": "/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
     {
       "src": "/icon-192x192.png",
       "sizes": "192x192",
@@ -27,6 +33,44 @@
       "src": "/icon-512x512.png",
       "sizes": "512x512",
       "type": "image/png"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/home-dark-narrow.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/home-light-narrow.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/faq-light-narrow.png",
+      "type": "image/png",
+      "sizes": "540x720",
+      "form_factor": "narrow"
+    },
+    {
+      "src": "/screenshots/home-dark-wide.png",
+      "type": "image/png",
+      "sizes": "1024x593",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/home-light-wide.png",
+      "type": "image/png",
+      "sizes": "1024x593",
+      "form_factor": "wide"
+    },
+    {
+      "src": "/screenshots/faq-light-wide.png",
+      "type": "image/png",
+      "sizes": "1024x593",
+      "form_factor": "wide"
     }
   ]
 }
