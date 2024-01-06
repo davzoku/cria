@@ -208,24 +208,12 @@ export default function Chat(props: { apiKeyApp: string }) {
       direction="column"
       position="relative"
     >
-      {/* <Img
-        src={Bg.src}
-        position={'absolute'}
-        w="450px"
-        left="50%"
-        top="40%"
-        transform={'translate(-50%, -50%)'}
-        style={{ 
-          opacity: 0.1,
-          filter: colorMode == 'dark' ? 'invert(1)' : 'none' // Apply invert filter only if colorMode is light
-        }}
-      /> */}
       <Img
         src={Bg.src}
-        position="fixed" // Set the position to fixed
+        position="absolute"
         w="450px"
         left="50%"
-        top="40%"
+        top="35%"
         transform="translate(-50%, -50%)"
         zIndex="-1" // Place the background image behind the content
         opacity={0.1}
