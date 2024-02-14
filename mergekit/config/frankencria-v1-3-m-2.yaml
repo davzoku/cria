@@ -1,0 +1,28 @@
+# https://huggingface.co/vilm/vinallama-12.5b-chat-DUS
+slices:
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [0, 16]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [8, 16]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [8, 16]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [16, 24]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [16, 24]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [24, 28]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [24, 28]
+  - sources:
+      - model: davzoku/cria-llama2-7b-v1.3
+        layer_range: [28, 32]
+merge_method: passthrough
+dtype: bfloat16
